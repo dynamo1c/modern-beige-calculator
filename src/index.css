@@ -1,0 +1,94 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+@layer base {
+  :root {
+    --background: 34 33% 82%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 34 33% 82%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 34 33% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 34 33% 82%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 76%;
+
+    --radius: 0.75rem;
+
+    --beige: 34 33% 82%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-beige text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+}
+
+@layer components {
+  .calc-display {
+    @apply rounded-2xl p-6 text-right text-4xl font-light w-full mb-4 shadow-inner;
+  }
+  
+  .calc-button {
+    @apply w-full aspect-square rounded-2xl flex items-center justify-center text-xl font-light transition-all duration-200;
+  }
+  
+  .calc-button-number {
+    @apply calc-button;
+  }
+  
+  .calc-button-operation {
+    @apply bg-beige text-black calc-button;
+  }
+  
+  .calc-button-function {
+    @apply calc-button;
+  }
+  
+  .glass-card {
+    @apply bg-black/80 backdrop-blur-md rounded-3xl shadow-soft border border-white/10;
+  }
+  
+  .calculator-card {
+    @apply glass-card p-6;
+  }
+  
+  .section-header {
+    position: relative;
+  }
+  
+  .black-overlay {
+    @apply bg-black/10 backdrop-blur-sm;
+    position: relative;
+  }
+}
